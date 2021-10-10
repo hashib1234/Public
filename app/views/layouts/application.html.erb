@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RefernzApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      
+     <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     
+  </head>
+ <% if current_user.nil? %> 
+    <body>
+	 <%= render 'layouts/messages' %>
+      <%= yield %>
+  </body>
+  <% else%>
+  	<body>	
+  	<div class="main-wrapper">
+  	  <%= render 'layouts/sidebar'%>	
+  	   <div class="page-wrapper">
+        <%= render 'layouts/navbar' %>			
+	     <%= render 'layouts/messages' %>
+
+          <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
+      </div>	
+    </body>
+  <%end%>
+  
+</html>

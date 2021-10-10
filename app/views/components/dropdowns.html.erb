@@ -1,0 +1,43 @@
+
+<%=javascript_include_tag "core.js"%>
+<%=javascript_include_tag "prism.js"%>
+<%=javascript_include_tag "clipboard.min.js"%>
+<%=javascript_include_tag "feather.min.js"%>
+<%=javascript_include_tag "template.js"%>
+
+ <div class="page-content">
+                <div class="row">
+                    <div class="col-xl-10 main-content pl-xl-4 pr-xl-5">
+                        <h1 class="page-title">Dropdowns</h1>
+                        <hr>
+
+                        <h4 id="default">Basic Example</h4>
+                        <p class="mb-3">Wrap the dropdown’s toggle (your button or link) and the dropdown menu within <code>.dropdown</code>, or another element that declares position relative. Dropdowns can be triggered from link or button elements to better fit your potential needs.</p>
+                        <div class="example">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Dropdown button
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figure class="highlight" id="defaultDropdown">
+                            <pre><code class="language-markup"><script type="script/prism-html-markup"><div class="dropdown">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Dropdown button
+	</button>
+	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<a class="dropdown-item" href="#">Action</a>
+		<a class="dropdown-item" href="#">Another action</a>
+		<a class="dropdown-item" href="#">Something else here</a>
+	</div>
+</div></script></code></pre>
+                            <button type="button" class="btn btn-clipboard" data-clipboard-target="#defaultDropdown"><i data-feather="copy"></i></button>
+                        </figure>                        
+                    </div>                    
+                </div>
+            </div>

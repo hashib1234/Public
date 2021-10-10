@@ -1,0 +1,37 @@
+
+<%=javascript_include_tag "core.js"%>
+<%=javascript_include_tag "prism.js"%>
+<%=javascript_include_tag "clipboard.min.js"%>
+<%=javascript_include_tag "feather.min.js"%>
+<%=javascript_include_tag "template.js"%>
+ <div class="page-content">
+                <div class="row">
+                    <div class="col-xl-10 main-content pl-xl-4 pr-xl-5">
+                        <h1 class="page-title">Spinner</h1>
+                        <hr>
+
+                        <h4 id="default">Border Spinner</h4>
+                        <p class="mb-3">Use the border spinners for a lightweight loading indicator.</p>
+                        <div class="example">
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <figure class="highlight" id="Default">
+                            <pre><code class="language-markup"><script type="script/prism-html-markup"><div class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div></script></code></pre>
+                            <button type="button" class="btn btn-clipboard" data-clipboard-target="#Default"><i data-feather="copy"></i></button>
+                        </figure>
+                    </div>                    
+                </div>
+            </div>
+
+            <!-- partial:../../partials/_footer.html -->
+            <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between">
+                <p class="text-muted text-center text-md-left">Copyright © 2019 <a href="#" target="_blank">Ontash</a>. All rights reserved</p>
+            </footer>
+            <!-- partial -->
+
+        </div>
+    </div>

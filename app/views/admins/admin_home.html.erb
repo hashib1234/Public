@@ -1,0 +1,233 @@
+<script type="text/javascript">
+	document.body.addEventListener('ajax:success', function(event) {
+  var detail = event.detail;
+  var data = detail[0], status = detail[1], xhr = detail[2];
+  error_msg(data.data);
+  window.location.replace('/admin_home');
+});
+
+	
+</script>
+
+<div class="page-content">
+	<table class="table table-striped sortable" id="table1">
+	  <thead>
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">Name</th>
+	      <th scope="col">Mail</th>
+	      <th scope="col">Last login</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<%@users.each_with_index do |user,index| %>
+	    <tr>
+	      <th scope="row"><%=index+1%></th>
+	      <td><%=user.name%></td>
+	      <td><%=user.email%></td>
+	      <td><%=user.last_sign_in_at%></td>
+	      <td >
+                <% if user.admin? %>
+                  <%= link_to 'Revoke Admin', users_revokeadmin_path(id: user.id), class: "btn btn-primary btn-md" ,id:"link123" %><% else %>
+                  <%= link_to 'Make Admin', users_makeadmin_path(id: user.id), class: "btn btn-primary btn-md",id:"togglebutton",:style=>"background-color: green;"%>
+
+                <% end %>
+                
+            </td>
+            <td>
+              <%= link_to 'Edit',"#", :onclick => "edituser(#{user.id})",'data-toggle' =>  "modal", 'data-target' => '#myModal'  %>
+               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                 
+                  <h4 class="modal-title" id="myModalLabel">Update User</h4>
+                </div>
+                <div class="modal-body">
+                         <%= form_tag admins_update_user_path(user)  do %>
+
+
+                      <div class="field">
+                       <label for="first name">First Name:</label>
+                      <br>
+                      <input type="text" class="form-control" id="fname" placeholder="Enter firstname" name="fname" id="firstname" >
+                      </div>
+                        <div class="field">
+                       <label for="first name">Second Name:</label>
+                      <br>
+                      <input type="text" class="form-control" id="fname" placeholder="Enter firstname" name="sname" id="secondname" >
+                      </div>
+                        <div class="field">
+                       <label for="first name">Phon number:</label>
+                      <br>
+                      <input type="text" class="form-control" id="fname" placeholder="Enter firstname" name="phn_no" id = "phn">
+                      </div>
+
+                    
+
+
+                      <br>
+                      <div class="actions">
+                    <%= button_tag(type: 'submit', class:"btn btn-primary") do %>
+                     <span class="glyphicon glyphicon-ok-sign"></span> Update
+                      </div>
+                      <% end %>
+                      <% end %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+
+           
+            
+
+            </td>
+            <td>
+            
+
+            	<%= link_to  admins_destroy_user_path(user),method: :delete, data: { confirm: "You sure?" } do %>
+
+
+                   <i data-feather="delete"></i>
+
+               <% end%>
+            </td>
+	    </tr>
+	   
+      <%end%>
+	  </tbody>
+	</table>
+	<button type="button" class="btn btn-primary" style="padding:5px;" data-title="Add" data-toggle="modal" data-target="#add_user" data-backdrop= "false">Add New User</button>
+	 <%= form_tag("/admins_create_user",:class=>"col-md-12" ,:style=>"adding:10px;background-color:#fff;",:role=>"form") do%>
+
+                        <div class="modal fade" id="add_user"  tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true" style="margin-top:10%">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title custom_align" id="Heading">Add New User</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i data-feather="x-circle"></i></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                    	 <div class="form-group">
+                                  <label for="email">Email:</label>
+                                  <input type="email" class="form-control" id="email1" placeholder="Enter email" name="email" required="true">
+                                </div>
+                                        <div class="form-group">
+                                  <label for="first name">First Name:</label>
+                                  <input type="text" class="form-control" id="fname1" placeholder="Enter firstname" name="fname" required="true" >
+                                </div>      
+                                
+                                <div class="form-group">
+                                  <label for="pwd">Password:</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required="true"  pattern=".{6,10}" required title="6 to 10 characters">
+                                </div>     
+                          		<div class="form-group">
+                                  <label for="pwd_confirm">Password Confirm:</label>
+                                  <input type="password" class="form-control" id="pwd_confirm" placeholder="Password confirm" name="pwd_confirm" required="true"  pattern=".{6,10}" required title="6 to 10 characters">
+                                </div>
+                                </div>
+                                    <div class="modal-footer ">
+                                        <%= button_tag(type: 'submit', class: "btn btn-warning btn-lg",:style=>"width: 100%;", id: 'new_user',onclick:'return validateform()') do %>
+ <span class="glyphicon glyphicon-ok-sign"></span> Submit
+  <% end %>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+
+                        <%end %>
+
+        
+
+
+
+
+
+</div>
+  
+
+
+
+
+
+
+
+
+
+<script>
+ function validateform(){
+
+
+    var password = $("#pwd1").val();
+    var confirmPassword = $("#pwd_confirm1").val();
+    var x=$("#email1").val();
+
+    if ($("#fname1").val().length ==0) {
+            error_msg('name should be filled','error');
+            return false;
+        }
+
+    var atposition=x.indexOf("@");  
+    var dotposition=x.lastIndexOf(".");  
+    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+      error_msg('Please enter a valid e-mail address','error');
+      return false;  
+      }
+
+    if ($("#user_password").val().length < 8) {
+        error_msg('password should be 8 characters','error');
+        return false;
+      }
+
+     if (password != confirmPassword) {
+            error_msg('Passwords do not match.','error');
+            return false;
+
+      }
+
+ } 
+
+
+
+</script>
+<script >
+  
+ function edituser(id)
+ {
+ 
+
+  var user_id = id;
+  $.ajax({
+          type: "get", 
+          url: "/users_edituser?id="+user_id,
+          data: {'id':user_id},
+          contentType: false,
+          processData: false,
+          success: function(data, textStatus, jqXHR){
+             var firstname = data["first_name"];
+             var secondname = data["last_name"];
+             var phn_no = data["phone"];
+
+            
+             $('input[name="fname"]').val(firstname) ;
+             $('input[name="sname"]').val(secondname) ;
+             $('input[name="phn_no"]').val(phn_no) ;
+            
+
+          },
+          error: function(jqXHR, textStatus, errorThrown){
+            }
+    })
+
+ }
+</script>
+
+

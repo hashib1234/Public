@@ -1,0 +1,52 @@
+<div class="page-content">
+   <nav class="page-breadcrumb">
+      <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="#">Tables</a></li>
+         <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+      </ol>
+   </nav>
+   <div class="row">
+      <div class="col-md-12 grid-margin stretch-card">
+         <div class="card">
+            <div class="card-body">
+               <h6 class="card-title">Data Table</h6>
+               <div class="table-responsive">
+                  <table id="example" class="table">
+                     <thead>
+                        <tr>
+                           <th>Name</th>
+                           <th>Position</th>
+                           <th>Office</th>
+                           <th>Age</th>
+                           <th>Start date</th>
+                           <th>Salary</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <%@data_table.each do |val|%>
+                        <tr>
+                           <td><%=val.name%></td>
+                           <td><%=val.position%></td>
+                           <td><%=val.office%></td>
+                           <td><%=val.age%></td>
+                           <td><%=val.start_date%></td>
+                           <td><%=val.salary%></td>
+                        </tr>
+                        <%end%>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<script>
+   $(document).ready(function() {
+     $('#example').DataTable();
+     } );
+</script>
+
+
+
+                   

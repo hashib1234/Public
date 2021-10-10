@@ -1,0 +1,40 @@
+
+<%=javascript_include_tag "core.js"%>
+<%=javascript_include_tag "prism.js"%>
+<%=javascript_include_tag "clipboard.min.js"%>
+<%=javascript_include_tag "feather.min.js"%>
+<%=javascript_include_tag "template.js"%>
+
+ <div class="page-content">
+                <div class="row">
+                    <div class="col-xl-10 main-content pl-xl-4 pr-xl-5">
+                        <h1 class="page-title">Pagination</h1>
+                        <hr>
+                        <h4 id="default">Basic example</h4>
+                        <p class="mb-3">Pagination is built with list HTML elements so screen readers can announce the number of available links.</p>
+                        <div class="example">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination mb-0">
+                                    <li class="page-item"><a class="page-link" href="#"><i data-feather="chevron-left"></i></a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item disabled"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#"><i data-feather="chevron-right"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <figure class="highlight" id="Default">
+                            <pre><code class="language-markup"><script type="script/prism-html-markup"><nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#"><i data-feather="chevron-left"></i></a></li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item disabled"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#"><i data-feather="chevron-right"></i></a></li>
+  </ul>
+</nav></script></code></pre>
+                            <button type="button" class="btn btn-clipboard" data-clipboard-target="#Default"><i data-feather="copy"></i></button>
+                        </figure>
+                    </div>                    
+                </div>
+            </div>

@@ -1,0 +1,22 @@
+db_dev:
+   image: "mysql:5.7"
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_USERNAME: root
+     MYSQL_PASSWORD: root
+   ports:
+      - "3307:3306"
+web_dev:
+  image: anjalpachat/ref_app
+  ports:
+    - "3000:3000"
+  links:
+    - db_dev
+  environment:
+     DB_USERNAME: root
+     DB_PASSWORD: root
+     DB_DATABASE: referenz
+     DB_PORT: 3306
+     DB_HOST: db_dev
+     HTTP_HOST: 172.21.1.217
+

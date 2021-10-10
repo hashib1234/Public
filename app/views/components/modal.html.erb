@@ -1,0 +1,59 @@
+<%=javascript_include_tag "core.js"%>
+<%=javascript_include_tag "prism.js"%>
+<%=javascript_include_tag "clipboard.min.js"%>
+<%=javascript_include_tag "feather.min.js"%>
+<%=javascript_include_tag "template.js"%>
+<div class="page-content">
+                <div class="row">
+                    <div class="col-xl-10 main-content pl-xl-4 pr-xl-5">
+                        <h1 class="page-title">Modal</h1>
+                        <hr>
+                        <h4 id="default">Basic example</h4>
+                        <p class="mb-3">Below is a <em>static</em> modal example (meaning its <code>position</code> and <code>display</code> have been overridden).</p>
+                        <div class="example">
+                            <div class="modal static" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Modal title</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Modal body text goes here.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <figure class="highlight" id="Default">
+                            <pre><code class="language-markup"><script type="script/prism-html-markup"><div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div></script></code></pre>
+                            <button type="button" class="btn btn-clipboard" data-clipboard-target="#Default"><i data-feather="copy"></i></button>
+                        </figure>                  
+                    </div>
+
+                </div>
+            </div>

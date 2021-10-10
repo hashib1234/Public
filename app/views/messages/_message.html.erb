@@ -1,0 +1,37 @@
+<%if current_user== message.user %>
+  <li class="message-item me">
+  <%if message.user.profile.avatar.attached?%>
+    <%= image_tag message.user.profile.avatar ,:alt=>"avatar", :class => "img-xs rounded-circle"%>
+  <%else %>
+    <%= image_tag "default-avatar.png" ,:alt=>"profile" , :class => "img-xs rounded-circle"%>
+  <%end%>
+  <div class="content">
+    <div class="message">
+      <div class="bubble">
+        <p> <%= message.body %></p>
+      </div>
+    </div>
+    <div class="message">                              
+      <span><%= message.created_at %></span>
+    </div>
+  </div>
+  </li>
+<%else%>
+  <li class="message-item friend">
+  <%if message.user.profile.avatar.attached?%>
+    <%= image_tag message.user.profile.avatar ,:alt=>"avatar", :class => "img-xs rounded-circle"%>
+  <%else %>
+    <%= image_tag "default-avatar.png" ,:alt=>"profile" , :class => "img-xs rounded-circle"%>
+  <%end%>
+  <div class="content">
+    <div class="message">
+      <div class="bubble">
+        <p> <%= message.body %></p>
+      </div>
+    </div>
+    <div class="message">                              
+      <span><%= message.created_at %></span>
+    </div>
+  </div>
+  </li>
+<%end%>

@@ -1,0 +1,36 @@
+<%=javascript_include_tag "core.js"%>
+<%=javascript_include_tag "prism.js"%>
+<%=javascript_include_tag "clipboard.min.js"%>
+<%=javascript_include_tag "feather.min.js"%>
+<%=javascript_include_tag "template.js"%>
+<div class="page-content">
+    <div class="row">
+        <div class="col-xl-10 main-content pl-xl-4 pr-xl-5">
+            <h1 class="page-title">Button group</h1>
+            <hr>
+            <h4 id="default">Basic example</h4>
+            <p>Wrap a series of buttons with <code>.btn</code> in <code>.btn-group</code>.</p>
+            <div class="example">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary">Left</button>
+                    <button type="button" class="btn btn-primary">Middle</button>
+                    <button type="button" class="btn btn-primary">Right</button>
+                </div>
+            </div>
+            <figure class="highlight" id="defaultGroup">
+                <pre>
+                    <code class="language-markup">
+                        <script type="script/prism-html-markup">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-primary">Left</button>
+                                <button type="button" class="btn btn-primary">Middle</button>
+                                <button type="button" class="btn btn-primary">Right</button>
+                            </div>
+                        </script>
+                    </code>
+                </pre>
+                <button type="button" class="btn btn-clipboard" data-clipboard-target="#defaultGroup"><i data-feather="copy"></i></button>
+            </figure>
+        </div>                    
+    </div>
+</div>

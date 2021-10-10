@@ -1,0 +1,48 @@
+
+<%=javascript_include_tag "core.js"%>
+<%=javascript_include_tag "prism.js"%>
+<%=javascript_include_tag "clipboard.min.js"%>
+<%=javascript_include_tag "feather.min.js"%>
+<%=javascript_include_tag "template.js"%>
+<div class="page-content">
+   <div class="row">
+      <div class="col-xl-10 main-content pl-xl-4 pr-xl-5">
+         <h1 class="page-title">Collapse</h1>
+         <hr>
+         <h4 id="default">Basic Example</h4>
+         <p class="mb-3">Click the buttons below to show and hide another element via class changes:</p>
+         <div class="example">
+            <p>
+               <a class="btn btn-primary mb-1 mb-md-0" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+               Link with href
+               </a>
+               <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+               Button with data-target
+               </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+               <div class="card card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+               </div>
+            </div>
+         </div>
+         <figure class="highlight" id="defaultBreadcrumbs">
+            <pre><code class="language-markup"><script type="script/prism-html-markup"><p>
+               <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+               Link with href
+               </a>
+               <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+               Button with data-target
+               </button>
+               </p>
+               <div class="collapse" id="collapseExample">
+               <div class="card card-body">
+               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+               </div>
+               </div>
+            </script></code></pre>
+            <button type="button" class="btn btn-clipboard" data-clipboard-target="#defaultBreadcrumbs"><i data-feather="copy"></i></button>
+         </figure>
+      </div>
+   </div>
+</div>

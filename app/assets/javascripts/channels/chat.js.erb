@@ -1,0 +1,30 @@
+<% Conversation.all.each do |conv| %>
+
+App.chat<%= conv.id%> = App.cable.subscriptions.create({channel:"ChatChannel",conversation: <%= conv.id%>}, {
+  connected: function() {
+    //alert("connected");
+  },
+  disconnected: function() {},
+  received: function(data) {
+  
+     var send_user_mail = data.user_email;
+     var email = $("#current_user_mail").text();
+  	 $("#badge_"+data.user_id).append('*');
+  	 var class_for_append= send_user_mail == email ? 'me' : 'friend' ;
+  	   	 $("#messages_<%= conv.id%>").append('<li class="message-item '+class_for_append+'">'+
+                          '<img src='+data.user_avatar_url+' class="img-xs rounded-circle" alt="avatar">'+
+                          '<div class="content">'+
+                            '<div class="message">'+
+                              '<div class="bubble">'+
+                                '<p>'+data.body+'</p>'+
+                              '</div>'+
+                              '<span>'+data.created_at+'</span>'+
+                            '</div>'+
+                          '</div>'+
+                        '</li>'
+);
+     
+  }
+});
+
+<%end%>

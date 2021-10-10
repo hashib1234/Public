@@ -1,0 +1,36 @@
+
+<%=javascript_include_tag "core.js"%>
+<%=javascript_include_tag "prism.js"%>
+<%=javascript_include_tag "clipboard.min.js"%>
+<%=javascript_include_tag "feather.min.js"%>
+<%=javascript_include_tag "template.js"%>
+
+  <div class="page-content">
+                <div class="row">
+                    <div class="col-xl-10 main-content pl-xl-4 pr-xl-5">
+                        <h1 class="page-title">Popovers</h1>
+                        <hr>
+                        <h4 id="enable">Enable popovers everywhere</h4>
+                        <p class="mb-3">One way to initialize all popovers on a page would be to select them by their <code>data-toggle</code> attribute:</p>
+                        <figure class="highlight" id="Enable">
+                            <pre><code class="language-javascript"><script type="script/prism-javascript-markup">$(function () {
+  $('[data-toggle="popover"]').popover()
+})</script></code></pre>
+                            <button type="button" class="btn btn-clipboard" data-clipboard-target="#Enable"><i data-feather="copy"></i></button>
+                        </figure>
+
+                        <hr>
+
+                        <h4 id="default">Basic example</h4>
+                        <p class="mb-3">Popovers rely on the 3rd party library <a href="https://popper.js.org/">Popper.js</a> for positioning. You must include <a href="../../../../../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">popper.min.js</a> before bootstrap.js or use <code>bootstrap.bundle.min.js</code> / <code>bootstrap.bundle.js</code> which contains Popper.js in order for popovers to work!</p>
+                        <div class="example">
+                            <button type="button" class="btn btn-primary" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+                        </div>
+                        <figure class="highlight" id="Default">
+                            <pre><code class="language-markup"><script type="script/prism-html-markup"><button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button></script></code></pre>
+                            <button type="button" class="btn btn-clipboard" data-clipboard-target="#Default"><i data-feather="copy"></i></button>
+                        </figure>
+                    </div>                    
+                </div>
+            </div>
+            <script></script>

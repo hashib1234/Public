@@ -1,0 +1,44 @@
+<%=javascript_include_tag "core.js"%>
+<%=javascript_include_tag "prism.js"%>
+<%=javascript_include_tag "clipboard.min.js"%>
+<%=javascript_include_tag "feather.min.js"%>
+<%=javascript_include_tag "template.js"%>
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-xl-10 main-content pl-xl-4 pr-xl-5">
+                        <h1 class="page-title">Cards</h1>
+                        <hr>
+                        <h4 id="default">Basic Example</h4>
+                        <p class="mb-3">Below is an example of a basic card with mixed content and a fixed width. Cards have no fixed width to start, so they’ll naturally fill the full width of its parent element. This is easily customized with our various <a href="#sizing">sizing options</a>.</p>
+                        <div class="example">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-xl-4" style="float: none;">
+                                    <div class="card">
+                                        <%= image_tag("placeholder1.jpg", :alt => "...", :class => "card-img-top") %>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <figure class="highlight" id="defaultCard">
+                            <pre><code class="language-markup"><script type="script/prism-html-markup">
+                                <div class="card">
+                             <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Card title</h5>
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                  </div>
+                                      
+                                  </script></code></pre>
+                            <button type="button" class="btn btn-clipboard" data-clipboard-target="#defaultCard"><i data-feather="copy"></i></button>
+                        </figure>                      
+                    </div>                    
+                </div>
+            </div>
+            

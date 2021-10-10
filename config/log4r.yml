@@ -1,0 +1,28 @@
+log4r_config:
+  # define all loggers ...
+  loggers:
+    - name      : production
+      level     : WARN
+      trace     : 'false'
+      outputters :
+      - datefile
+    - name      : development
+      level     : DEBUG
+      trace     : 'true'
+      outputters :
+      - datefile
+
+  # define all outputters (incl. formatters)
+  outputters:
+  - type: DateFileOutputter
+    name: datefile
+    dirname: "log"
+    # notice the file extension is needed! 
+    # if you want the file is named by the process, just comment it,
+    # then it will automatically get the same name with its process,
+    # e.g.  rails_2017-05-03.log
+    filename: "refrnz_app.log" 
+    formatter:
+      date_pattern: '%H:%M:%S'
+      pattern     : '%d %l: %m '
+      type        : PatternFormatter
